@@ -84,7 +84,7 @@ export class Login extends React.Component {
             )
         }else{
             display.push(
-                <TouchableOpacity style={{ flex: 1, backgroundColor: '#25aae1', borderRadius: 2, padding: 10, }} onPress={() => this._getLogin()}>
+                <TouchableOpacity style={{ flex: 1, backgroundColor: '#FF8F00', borderRadius: 2, padding: 10, }} onPress={() => this._getLogin()}>
                     <Text style={[ styles.text_font, { alignSelf: "center", }]}>LOGIN</Text>
                 </TouchableOpacity>
             )
@@ -97,12 +97,12 @@ export class Login extends React.Component {
         }
 
         return (
-            <ScrollView style={{ backgroundColor: "#010001", }}>
+            <ScrollView style={{ backgroundColor: "#FFF", }}>
                 <StatusBar hidden={true} />
                 <View style={{ padding: 36, }}>
                     <Image 
                         resizeMode="contain"
-                        source={require('../../images/logo.png')} 
+                        source={require('../../images/logo1.png')} 
                         style={{ width: 200, height: 200, marginTop: 54, marginBottom: 24, alignSelf: 'center', }}
                     >
                     </Image>
@@ -139,7 +139,7 @@ export class Login extends React.Component {
 const styles = StyleSheet.create({
     text_font:{
         fontSize: 16,
-        color: '#fff',
+        color: '#FF8F00',
     },
     row_underline:{
         flexDirection: "row", 
