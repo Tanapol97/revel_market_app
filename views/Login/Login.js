@@ -35,10 +35,11 @@ export class Login extends React.Component {
     componentDidMount() {
         AsyncStorage.getItem('user_data').then((user) => { return JSON.parse(user) }).then((user_data) => {
             if (user_data != null) {
-                this.setState({ 
-                    username: user_data.user_username, 
-                    password: user_data.user_password 
-                });
+                // this.setState({ 
+                //     username: user_data.user_username, 
+                //     password: user_data.user_password 
+                // });
+                this.props.navigation.navigate('Home')
             }
         });
     }
@@ -78,14 +79,14 @@ export class Login extends React.Component {
         var display = [];
         if (this.state.loading) {
             display.push(
-                <View style={{ flexDirection: "row", justifyContent: "center", flex: 1, backgroundColor: '#25aae1', borderRadius: 2, padding: 10, }}>
+                <View style={{ flexDirection: "row", justifyContent: "center", flex: 1, backgroundColor: '#FF8F00', borderRadius: 2, padding: 10, }}>
                     <ActivityIndicator size="small" color="#fff"/>
                 </View>
             )
         }else{
             display.push(
                 <TouchableOpacity style={{ flex: 1, backgroundColor: '#FF8F00', borderRadius: 2, padding: 10, }} onPress={() => this._getLogin()}>
-                    <Text style={[ styles.text_font, { alignSelf: "center", }]}>LOGIN</Text>
+                    <Text style={[ styles.text_font, { alignSelf: "center",color:'#fff', }]}>LOGIN</Text>
                 </TouchableOpacity>
             )
         }
@@ -97,7 +98,7 @@ export class Login extends React.Component {
         }
 
         return (
-            <ScrollView style={{ backgroundColor: "#FFF", }}>
+            <ScrollView style={{ backgroundColor: "#000", }}>
                 <StatusBar hidden={true} />
                 <View style={{ padding: 36, }}>
                     <Image 
