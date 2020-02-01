@@ -38,15 +38,17 @@ export class ShopDetail extends React.Component {
         }, () => { 
             shop_model.getShopByShopCode(shop_code).then((response) => {
                 if (response == false) {
+                   
                     this.setState({
                         loading: false,
                         alert: 'network-failed',
                     });
                 }else if (response.data.length == 0) {
-                    this.setState({
-                        loading: false,
-                        alert: 'not-found',
-                    });
+                    this.props.navigation.goBack();
+                    // this.setState({
+                    //     loading: false,
+                    //     alert: 'not-found',
+                    // });
                 }else{
                     this.setState({ 
                         loading: false,
